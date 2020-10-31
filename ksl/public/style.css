@@ -1,0 +1,33 @@
+.grid-1 {
+    color: "purple";
+    display: grid;
+    grid-row: 1 1 1;
+    justify-content: center;
+}
+
+.grid-2 {
+    color: "purple";
+    display: flex;
+    flex-direction: column;
+}
+
+.items-section {
+    height: 15em;
+    display: flex;
+    flex-direction: row;
+    grid-row: auto;
+    justify-content: space-evenly;
+}
+
+.item-box {
+    display: grid;
+    text-decoration: underline;
+    grid-column: auto;
+    border: 1px solid black;
+
+}
+.items {
+    display: grid;
+    grid-column: span;
+    justify-content: space-between;
+}
