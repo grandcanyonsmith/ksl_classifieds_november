@@ -65,12 +65,9 @@ while True:
             # Then if the page contains new listing sections, use find_all method to fetch all the anchor tags
             # to get product links
             item_list = container.find_all('a', attrs={'class': 'listing-item-link'})
-            # using list comprehension syntax to join the href attribute of anchor tag with the main_url to get
-            # the complete url of the products
-            links = [website_url + a['href'] for a in item_list]
-            return links
+            return [website_url + a['href'] for a in item_list]
         except Exception as e:
-            print("Error {} at {}".format(e, search_url))
+            print(f"Error {e} at {search_url}")
             return None
 
 
@@ -93,7 +90,7 @@ while True:
                     break
             return container
         except Exception as e:
-            print("Error {} at {}".format(e, url))
+            print(f"Error {e} at {url}")
             return None
 
 
@@ -266,7 +263,7 @@ while True:
         client = Client(account_sid, auth_token)
 
         message = client.messages \
-        .create(
+            .create(
         body=f"{info}",
         from_='+13852501338',
         to=to_number
